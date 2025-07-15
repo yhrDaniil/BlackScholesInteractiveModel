@@ -24,6 +24,7 @@ def blackScholes(r, S, K, T, sigma, type="C"):
     
 
 # vars for Black-Scholes
+st.sidebar.write("MADE BY DANIIL NEZHALSKYI")
 r = st.sidebar.number_input("Risk-Free rate (%)", min_value=float(0), value = round(float(0.05),2)) # Risk-Free rate
 S = st.sidebar.number_input("Underlying Price($)", min_value=float(0), value = round(float(100.00),2)) # underlying price
 K = st.sidebar.number_input("Strike Price ($)", min_value=float(0), value = round(float(100.00),2)) # Strike price
