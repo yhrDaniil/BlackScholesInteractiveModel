@@ -32,8 +32,8 @@ T = st.sidebar.number_input("Time to Expiry (Years)", min_value=float(0), value 
 sigma = st.sidebar.number_input("Volatility (σ)", min_value=float(0), value = round(float(0.2),2))#sigma (volatility)
 st.sidebar.divider()
 st.sidebar.write("Heatmap Variables")
-min_price = st.sidebar.number_input("Minimum Underlying Price", round(75.00,2))
-max_price = st.sidebar.number_input("Maximum Underlying Price", round(125.00,2))
+min_price = st.sidebar.number_input("Minimum Underlying Price", min_value=0.01,value=round(75.00,2))
+max_price = st.sidebar.number_input("Maximum Underlying Price", min_value=0.02,value=round(125.00,2))
 min_volatility = st.sidebar.slider("Minimum Volatility", float(0.01), float(1.00),0.10)
 max_volatility = st.sidebar.slider("Maximum Volatility", float(0.02), float(1.00),0.30)
 
