@@ -76,6 +76,7 @@ with col2:
 # Heatmap stuff
 spot_prices = np.linspace(min_price, max_price, 10)         # 10 values from 80 to 120
 volatilities = np.linspace(min_volatility, max_volatility, 10)      # 10 values from 0.01 to 0.8
+j = sns.diverging_palette(125, 10, as_cmap=True)
 
 call_matrix = []
 for sigma in volatilities:
@@ -93,7 +94,7 @@ df.columns.name = 'Spot Price'
 
 
 fig = plt.figure(figsize=(10,8))
-sns.heatmap(df2,annot=True, fmt=".2f", cmap='YlOrBr')
+sns.heatmap(df2,annot=True, fmt=".2f", cmap=j)
 st.divider()
 col3, col4 = st.columns(2)
 with col3:
@@ -117,7 +118,7 @@ df.columns.name = 'Spot Price'
 
 
 fig2 = plt.figure(figsize=(10,8))
-sns.heatmap(df2,annot=True, fmt=".2f", cmap='YlOrBr')
+sns.heatmap(df2,annot=True, fmt=".2f", cmap=j)
 with col4:
     st.write("PUT Heatmap")
     st.pyplot(fig2)
